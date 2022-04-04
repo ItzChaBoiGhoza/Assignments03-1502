@@ -28,6 +28,31 @@ public class ToyStoreController implements Initializable{
 	private final String FILE_PATH = "res/Toys.txt"; 
 	ArrayList<ToyFormatting> toys; //Instantiate toy database/array
 	
+ 	@FXML private ListView<ToyFormatting> listViewRemoveToys;
+    @FXML private ListView<ToyFormatting> listViewToys;
+    @FXML private RadioButton rBtnName;
+    @FXML private RadioButton rBtnSerialNumber;
+    @FXML private RadioButton rBtnType;
+    @FXML private ToggleGroup searchType;
+    @FXML private TextField txtAddAge;
+    @FXML private TextField txtAddBrand;
+    @FXML private TextField txtAddCount;
+    @FXML private TextField txtAddName;
+    @FXML private TextField txtAddType;
+    @FXML private TextField txtAddPrice;
+    @FXML private TextField txtAddSn;
+    @FXML private TextField txtClassification;
+    @FXML private TextField txtDesigner;
+    @FXML private TextField txtMaterial;
+    @FXML private TextField txtMaxPlayer;
+    @FXML private TextField txtMinPlayer;
+    @FXML private TextField txtName;
+    @FXML private TextField txtSNRemove;
+    @FXML private TextField txtSerialNumber;
+    @FXML private TextField txtSize;
+    @FXML private TextField txtType;
+    @FXML private ComboBox<String> comboBoxType;
+	
 	public ToyStoreController() throws Exception {
 		toys = new ArrayList<>();
 		loadData();
@@ -213,31 +238,6 @@ public class ToyStoreController implements Initializable{
 		ToyFormatting puzzle = new Puzzles(SN, name, brand, price, availableCount, ageAppropriate, puzzleType);
 		toys.add(puzzle);
 	}
-	
-    @FXML private ListView<ToyFormatting> listViewRemoveToys;
-    @FXML private ListView<ToyFormatting> listViewToys;
-    @FXML private RadioButton rBtnName;
-    @FXML private RadioButton rBtnSerialNumber;
-    @FXML private RadioButton rBtnType;
-    @FXML private ToggleGroup searchType;
-    @FXML private TextField txtAddAge;
-    @FXML private TextField txtAddBrand;
-    @FXML private TextField txtAddCount;
-    @FXML private TextField txtAddName;
-    @FXML private TextField txtAddType;
-    @FXML private TextField txtAddPrice;
-    @FXML private TextField txtAddSn;
-    @FXML private TextField txtClassification;
-    @FXML private TextField txtDesigner;
-    @FXML private TextField txtMaterial;
-    @FXML private TextField txtMaxPlayer;
-    @FXML private TextField txtMinPlayer;
-    @FXML private TextField txtName;
-    @FXML private TextField txtSNRemove;
-    @FXML private TextField txtSerialNumber;
-    @FXML private TextField txtSize;
-    @FXML private TextField txtType;
-    @FXML private ComboBox<String> comboBoxType;
     
     @FXML
     void searchToyHandler(ActionEvent event) throws Exception{
