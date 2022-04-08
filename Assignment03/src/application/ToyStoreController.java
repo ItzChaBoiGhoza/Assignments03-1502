@@ -100,6 +100,14 @@ public class ToyStoreController implements Initializable{
 		}
 	}
 	
+	
+	/**
+	 * This method takes in the first digits of the serial number 
+	 * and uses a switch method to determine what type of toy it is.
+	 * 
+	 * @param serialNumber
+	 * @return Returns the type of toy as char
+	 */
 	public String typeChecker(char serialNumber) {
 		String Type = null;
 		switch (serialNumber) {
@@ -125,6 +133,13 @@ public class ToyStoreController implements Initializable{
 		return Type;
 	}
 	
+	/**
+	 * This method searches for the serial number and check if SN is 
+	 * equal to the serial number entered
+	 * 
+	 * @param sn
+	 * @return
+	 */
 	private ToyFormatting searchBySerial(String sn) {
 		ToyFormatting toy = null;
 		
@@ -138,6 +153,13 @@ public class ToyStoreController implements Initializable{
 		return toy;
 	}
 	
+	/**
+	 * This methods searches a toy by its name and prints the output
+	 * by using the toString method
+	 * 
+	 * @param toyName
+	 */
+	public
 	public void toySearchByName(String toyName) {
 		ToyFormatting toy = null;
 		for(ToyFormatting t : toys) {
@@ -163,6 +185,14 @@ public class ToyStoreController implements Initializable{
 		}
 	}
 	
+	/**
+	 * This method check for the toy type (figure, board game, figures, puzzles)
+	 * It does this by grabbing the length of array (.size) and checking if it is 
+	 * an instance of one of the toy model classes
+	 * Prints the output by using the toString method from the toy classes
+	 * @param toyType
+	 * @throws Exception
+	 */
 	public void toySearchByType(char toyType) throws Exception {
 		int i;
 		if(toyType == 'A') {
@@ -207,6 +237,10 @@ public class ToyStoreController implements Initializable{
 		}
 	}
 	
+	/**
+	 * removeToy() removes a toy in the database
+	 * @param sn
+	 */
 	public void removeToy(String sn) {
 		int i = 0;
 		while(i < toys.size()) {
@@ -218,26 +252,72 @@ public class ToyStoreController implements Initializable{
 		}
 	}
 	
+	/**
+	 * Sets the parameter for the new toy
+	 * @param sn
+	 * @param name
+	 * @param brand
+	 * @param price
+	 * @param availableCount
+	 * @param ageAppropriate
+	 * @param materials
+	 * @param size
+	 */
 	public void addNewToyAnimal(String sn, String name, String brand, double price, int availableCount, int ageAppropriate, String materials, String size) {
 		ToyFormatting animal = new Animals(sn, name, brand, price, availableCount, ageAppropriate, materials, size);
 		toys.add(animal);
 	}
 	
+	/**
+	 * Sets the parameter for the new toy
+	 * @param SN
+	 * @param name
+	 * @param brand
+	 * @param price
+	 * @param availableCount
+	 * @param ageAppropriate
+	 * @param players
+	 * @param designers
+	 */
 	public void addNewToyBoardGame(String SN, String name, String brand, double price, int availableCount, int ageAppropriate, String players, String designers) {
 		ToyFormatting boardGame = new BoardGames(SN, name, brand, price, availableCount, ageAppropriate, players, designers);
 		toys.add(boardGame);
 	}
 	
+	/**
+	 * Sets the parameter for the new toy
+	 * @param SN
+	 * @param name
+	 * @param brand
+	 * @param price
+	 * @param availableCount
+	 * @param ageAppropriate
+	 * @param classification
+	 */
 	public void addNewToyFigure(String SN, String name, String brand, double price, int availableCount, int ageAppropriate, String classification) {
 		ToyFormatting figure = new Figures(SN, name, brand, price, availableCount, ageAppropriate, classification);
 		toys.add(figure);
 	}
 	
+	/**
+	 * Sets the parameter for the new toy
+	 * @param SN
+	 * @param name
+	 * @param brand
+	 * @param price
+	 * @param availableCount
+	 * @param ageAppropriate
+	 * @param puzzleType
+	 */
 	public void addNewToyPuzzle(String SN, String name, String brand, double price, int availableCount, int ageAppropriate, String puzzleType) {
 		ToyFormatting puzzle = new Puzzles(SN, name, brand, price, availableCount, ageAppropriate, puzzleType);
 		toys.add(puzzle);
 	}
     
+	/*
+	 * This method 
+	 * @throws Exception
+	 */
     @FXML
     void searchToyHandler(ActionEvent event) throws Exception{
     	
